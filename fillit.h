@@ -6,7 +6,7 @@
 /*   By: cpollich <cpollich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 18:42:28 by cpollich          #+#    #+#             */
-/*   Updated: 2019/04/16 15:26:31 by cpollich         ###   ########.fr       */
+/*   Updated: 2019/04/17 22:00:21 by cpollich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@
 #include "libft/libft.h"
 
 int		check_cnt(char **ar);
-int		check_pic(char **ar);
+int		check_mates(char **ar, int i, int j);
+int		check_figure_value(int **ar);
+int		check_figure(char **ar);
 char	**take_one_from_file(int fd);
+int		rm_intallocmem(int **ar);
+int		**intalloc(void);
 
 #	endif
