@@ -6,7 +6,7 @@
 /*   By: svivienn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 20:27:16 by svivienn          #+#    #+#             */
-/*   Updated: 2019/04/08 20:31:45 by svivienn         ###   ########.fr       */
+/*   Updated: 2019/04/17 20:30:46 by cpollich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,5 @@ void	ft_putstr_fd(char const *s, int fd)
 {
 	if (!s)
 		return ;
-	while (*s)
-	{
-		ft_putchar_fd(*(s++), fd);
-	}
+	write(fd, s, ft_strlen(s));
 }
