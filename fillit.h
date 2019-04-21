@@ -19,8 +19,22 @@
 #include "libft/libft.h"
 #include <stdint.h>
 
-int		check_cnt(char **ar);
-int		check_pic(char **ar);
-char	**take_one_from_file(int fd);
+typedef struct 		s_tetrim
+{
+	uint64_t		form;
+	s_tetrim		*next;
+	unsigned char	id;
+	unsigned char	width;
+	unsigned char	height;
+	unsigned char	x;
+	unsigned char	y;	
+}					t_tetrim;
+
+int					check_cnt(char **ar);
+int					check_pic(char **ar);
+char				**take_one_from_file(int fd);
+void				parts(const char *str, unsigned char *m);
+void				init_tetr(t_tetrim *form, const char *str);
+t_tetrim			*form(const char *str, char id);
 
 #	endif
