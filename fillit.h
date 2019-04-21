@@ -12,14 +12,12 @@
 
 #	ifndef FILLIT_H
 #	define FILLIT_H
-#	define BUFF_SIZE 21
 
-#include <stdlib.h>
-#include <unistd.h>
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/uio.h>
 #include "libft/libft.h"
+#include <stdint.h>
 
 int		check_cnt(char **ar);
 int		check_pic(char **ar);
