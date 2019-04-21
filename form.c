@@ -23,7 +23,7 @@ void		parts(const char *str, unsigned char *m)
 	i = 0;
 	while (i < 19)
 	{
-		if (str[i] = '#')
+		if (str[i] == '#')
 		{
 			if (i % 5 < m[0])
 				m[0] = i % 5;

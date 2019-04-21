@@ -36,5 +36,7 @@ char				**take_one_from_file(int fd);
 void				parts(const char *str, unsigned char *m);
 void				init_tetr(t_tetrim *form, const char *str);
 t_tetrim			*form(const char *str, char id);
+int					check_form(const char *str);
+int					check_elem(const char *str, int counts)
 
 #	endif
