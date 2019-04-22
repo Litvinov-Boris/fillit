@@ -6,7 +6,7 @@
 /*   By: cpollich <cpollich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 18:42:28 by cpollich          #+#    #+#             */
-/*   Updated: 2019/04/22 14:04:13 by cpollich         ###   ########.fr       */
+/*   Updated: 2019/04/22 16:48:58 by cpollich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ int					check_cnt(char **ar);
 int					check_pic(char **ar);
 char				**take_one_from_file(int fd);
 void				parts(const char *str, unsigned char *m);
-void				init_tetr(t_tetrim *form, const char *str);
+void				init_tetr(t_tetrim *form, const char *str,
+								unsigned char *m);
 t_tetrim			*form(const char *str, char id);
 int					check_form(const char *str);
 int					check_elem(const char *str, int counts);
