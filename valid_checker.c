@@ -6,7 +6,7 @@
 /*   By: cpollich <cpollich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 15:38:38 by cpollich          #+#    #+#             */
-/*   Updated: 2019/04/22 19:13:40 by cpollich         ###   ########.fr       */
+/*   Updated: 2019/04/22 21:43:42 by cpollich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int		check_elem(const char *str, int counts)
 
 void	clear_list(t_tetrim **list)
 {
-	if (!list && !*list)
+	if (!list || !*list)
 		return ;
 	if (((*list)->next) != NULL)
 		clear_list(&((*list)->next));

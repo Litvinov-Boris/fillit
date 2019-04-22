@@ -6,7 +6,7 @@
 /*   By: cpollich <cpollich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/21 21:01:31 by svivienn          #+#    #+#             */
-/*   Updated: 2019/04/22 19:15:19 by cpollich         ###   ########.fr       */
+/*   Updated: 2019/04/22 21:39:17 by cpollich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,11 @@ t_tetrim	*form(const char *str, char id)
 
 int			list_t(int fd, t_tetrim **list)
 {
-	int		counts;
-	char	*buf[21];
-	char	id;
-	int		counter;
+	int			counts;
+	char		*buf[21];
+	char		id;
+	int			counter;
+	t_tetrim	*forma;
 
 	id = 'A';
 	counter = 0;
@@ -93,7 +94,10 @@ int			list_t(int fd, t_tetrim **list)
 			return (0);
 		else
 		{
-			put_in_list(list, form((const char *)buf, id++));
+			forma = form((const char *)buf, id++);
+			if (!forma)
+				return (0);
+			put_in_list(list, forma);
 			counter++;
 		}
 	}
