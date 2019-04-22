@@ -6,7 +6,7 @@
 /*   By: cpollich <cpollich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 15:38:38 by cpollich          #+#    #+#             */
-/*   Updated: 2019/04/22 14:07:01 by cpollich         ###   ########.fr       */
+/*   Updated: 2019/04/22 16:48:13 by cpollich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,7 @@ int		check_cnt(char **ar)
 		}
 		i++;
 	}
-	if (shrp_cntr != 4)
-		return (0);
-	return (1);
+	return ((shrp_cntr == 4) ? 1 : 0);
 }
 
 int		check_form(const char *str)
