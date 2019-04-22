@@ -97,3 +97,13 @@ int		check_elem(const char *str, int counts)
 		return (0);
 	return (1);
 }
+
+void	clear_list(t_tetrim **list)
+{
+	if (*list == NULL)
+		return ;
+	if (((*list)->next) != NULL)
+		clear_list(list);
+	free(*list);
+	*list = NULL;
+}

@@ -38,5 +38,8 @@ void				init_tetr(t_tetrim *form, const char *str);
 t_tetrim			*form(const char *str, char id);
 int					check_form(const char *str);
 int					check_elem(const char *str, int counts);
+void				put_in_list(t_tetrim **list, t_tetrim *elem);
+void				clear_list(t_tetrim **list);
+int					list_t(int fd, t_tetrim *list);
 
 #	endif

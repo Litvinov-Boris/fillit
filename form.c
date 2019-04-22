@@ -76,3 +76,37 @@ t_tetrim	*form(const char *str, char id)
 	return (form);
 }
 
+int			list_t(int fd, t_tetrim **list)
+{
+	int counts;
+	char *buf[21];
+	char id;
+	t_tetrim *list;
+
+	id = 'A';
+	while ((counts = read(fd, buf, 21)) >= 20)
+	{
+		if(!check_elem(buf, counts))
+			return (0);
+		else
+			put_in_list(list, form(buf, id));
+	}
+	if (counts != 0)
+		return (0);
+	return (1);
+}
+
+void		put_in_list(t_tetrim **list, t_tetrim *elem)
+{
+	t_tetrim tmp;
+
+	if (!**list)
+		*list = elem;
+	else
+	{
+		tmp = *list;
+		while (tmp->next != NULL)
+			tmp = tmp->next;
+		tmp->next = elem;
+	}
+}
