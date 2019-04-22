@@ -6,7 +6,7 @@
 /*   By: cpollich <cpollich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/21 21:01:31 by svivienn          #+#    #+#             */
-/*   Updated: 2019/04/22 18:40:52 by cpollich         ###   ########.fr       */
+/*   Updated: 2019/04/22 19:04:16 by cpollich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void		parts(const char *str, unsigned char *m)
 			if (i / 5 > m[3])
 				m[3] = i / 5;
 		}
+		i++;
 	}
 }
 
