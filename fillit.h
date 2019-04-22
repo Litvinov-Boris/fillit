@@ -6,7 +6,7 @@
 /*   By: cpollich <cpollich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 18:42:28 by cpollich          #+#    #+#             */
-/*   Updated: 2019/04/22 16:48:58 by cpollich         ###   ########.fr       */
+/*   Updated: 2019/04/22 18:39:57 by cpollich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ int					check_form(const char *str);
 int					check_elem(const char *str, int counts);
 void				put_in_list(t_tetrim **list, t_tetrim *elem);
 void				clear_list(t_tetrim **list);
-int					list_t(int fd, t_tetrim *list);
+int					list_t(int fd, t_tetrim **list);
 
 #	endif

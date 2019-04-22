@@ -6,7 +6,7 @@
 /*   By: cpollich <cpollich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 15:38:38 by cpollich          #+#    #+#             */
-/*   Updated: 2019/04/22 16:48:13 by cpollich         ###   ########.fr       */
+/*   Updated: 2019/04/22 19:02:19 by cpollich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		check_form(const char *str)
 
 	blocc = 0;
 	i = 0;
-	while (i < 0)
+	while (i < 20)
 	{
 		if (str[i] == '#')
 		{
@@ -34,7 +34,7 @@ int		check_form(const char *str)
 		}
 		i++;
 	}
-	return (blocc == 6 || blocc == 8);
+	return ((blocc == 6 || blocc == 8) ? (1) : (0));
 }
 
 int		check_elem(const char *str, int counts)
@@ -55,6 +55,7 @@ int		check_elem(const char *str, int counts)
 		}
 		else if (str[i] != '\n')
 			return (0);
+		i++;
 	}
 	if (counts == 21 && str[20] != '\n')
 		return (0);
