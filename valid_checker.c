@@ -12,39 +12,6 @@
 
 #include "fillit.h"
 
-/*
-** проверка на количество # и на каоличество символов в строке
-** на вход нужно подавать двумерный массив с заполненной тетраминкой
-*/
-
-int		check_cnt(char **ar)
-{
-	int	i;
-	int	j;
-	int	shrp_cntr;
-	int	sym_cntr;
-
-	i = 0;
-	shrp_cntr = 0;
-	sym_cntr = 0;
-	while (ar[i])
-	{
-		j = 0;
-		sym_cntr++;
-		while (ar[i][j])
-		{
-			sym_cntr++;
-			if (ar[i][j] == '#')
-				shrp_cntr++;
-			if ((ar[i][j] != '#' && ar[i][j] != '.') || sym_cntr > 4)
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	return ((shrp_cntr == 4) ? 1 : 0);
-}
-
 int		check_form(const char *str)
 {
 	int blocc;

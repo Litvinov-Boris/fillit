@@ -30,9 +30,6 @@ typedef struct		s_tetrim
 	unsigned char	y;
 }					t_tetrim;
 
-int					check_cnt(char **ar);
-int					check_pic(char **ar);
-char				**take_one_from_file(int fd);
 void				parts(const char *str, unsigned char *m);
 void				init_tetr(t_tetrim *form, const char *str,
 								unsigned char *m);
