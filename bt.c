@@ -31,5 +31,37 @@ int		bruteforce(int counts, uint16_t *map, t_tetrim *list)
 
 int		backtrack(uint16_t *map, t_tetrim *list, int size)
 {
-	
+	if (!list)
+		return (1);
+	while (list->y <= (size - list->height))
+	{
+		list->x = 0;
+		while (list->x <= (size - list->width))
+		{
+			if (check_point(map, list))
+			{
+				busy_map(map, list);
+				if (backtrack(map, list->next, size))
+					return (1);
+				busy_map(map, list);
+			}
+			list->x++;
+		}
+		list->y++;
+	}
+	list->x = 0;
+	list->y = 0;
+	return (0);
+}
+
+int		check_point(uint16_t *map, t_tetrim *list)
+{
+	if(*(uint64_t*)(map + list->y) & (list->form >> list->x))
+		return (0);
+	return (1);
+}
+
+void	busy_map(uint16_t *map, t_tetrim *list)
+{
+	*(uint64_t*)(map + list->y) ^= list->form >> list->x;
 }

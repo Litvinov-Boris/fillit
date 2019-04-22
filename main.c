@@ -17,6 +17,7 @@ int			main(int ac, char **av)
 	int			fd;
 	t_tetrim	*list;
 	uint16_t	map[16];
+	int			count;
 
 	if (ac != 2)
 		ft_putstr("usage: ./fillit [filename]\n");
@@ -24,13 +25,14 @@ int			main(int ac, char **av)
 	{
 		list = NULL;
 		fd = open(av[1], O_RDONLY);
-		if (!list_t(fd, &list))
+		if (!(count = list_t(fd, &list)))
 		{
 			ft_putstr("error");
 			clear_list(&list);
 			return (0);
 		}
-		ft_bzero(map, sizeof(uint16_t) * 16);	
+		ft_bzero(map, sizeof(uint16_t) * 16);
+		printf("%i\n", bruteforse(count, map, list);
 	}
 	return (0);
 }
