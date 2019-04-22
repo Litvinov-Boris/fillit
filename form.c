@@ -48,6 +48,7 @@ void		init_tetr(t_tetrim *form, const char *str, unsigned char *m)
 	form->next = NULL;
 	form->x = 0;
 	form->y = 0;
+	form->busy = 0;
 	y = 0;
 	while (y < form->height)
 	{
@@ -81,7 +82,6 @@ int			list_t(int fd, t_tetrim **list)
 	int counts;
 	char *buf[21];
 	char id;
-	t_tetrim *list;
 
 	id = 'A';
 	while ((counts = read(fd, buf, 21)) >= 20)

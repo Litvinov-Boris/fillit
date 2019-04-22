@@ -28,6 +28,7 @@ typedef struct		s_tetrim
 	unsigned char	height;
 	unsigned char	x;
 	unsigned char	y;
+	int				busy;§
 }					t_tetrim;
 
 void				parts(const char *str, unsigned char *m);
