@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bt.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svivienn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cpollich <cpollich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/22 18:48:10 by svivienn          #+#    #+#             */
-/*   Updated: 2019/04/22 18:48:12 by svivienn         ###   ########.fr       */
+/*   Updated: 2019/04/22 20:59:41 by cpollich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		bruteforce(int counts, uint16_t *map, t_tetrim *list)
 	int size;
 
 	size = 2;
-	while ((size * size) < (count * 4))
+	while ((size * size) < (counts * 4))
 		size++;
 	while (!backtrack(map, list, size) && size <= 16)
 	{
@@ -56,7 +56,7 @@ int		backtrack(uint16_t *map, t_tetrim *list, int size)
 
 int		check_point(uint16_t *map, t_tetrim *list)
 {
-	if(*(uint64_t*)(map + list->y) & (list->form >> list->x))
+	if (*(uint64_t*)(map + list->y) & (list->form >> list->x))
 		return (0);
 	return (1);
 }

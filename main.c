@@ -6,11 +6,12 @@
 /*   By: cpollich <cpollich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 19:16:52 by cpollich          #+#    #+#             */
-/*   Updated: 2019/04/22 19:13:49 by cpollich         ###   ########.fr       */
+/*   Updated: 2019/04/22 21:01:25 by cpollich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include <stdio.h>
 
 int			main(int ac, char **av)
 {
@@ -32,7 +33,7 @@ int			main(int ac, char **av)
 			return (0);
 		}
 		ft_bzero(map, sizeof(uint16_t) * 16);
-		printf("%i\n", bruteforse(count, map, list);
+		printf("%i\n", bruteforce(count, map, list));
 	}
 	return (0);
 }

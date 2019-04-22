@@ -6,7 +6,7 @@
 #    By: cpollich <cpollich@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/21 19:05:00 by cpollich          #+#    #+#              #
-#    Updated: 2019/04/22 18:49:05 by cpollich         ###   ########.fr        #
+#    Updated: 2019/04/22 21:01:55 by cpollich         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ F = -Wall -Wextra -Werror
 
 SRCS =	valid_checker.c \
 		form.c \
-		main.c
+		main.c \
+		bt.c
 
 SRCO = $(SRCS:.c=.o)
 
@@ -44,3 +45,6 @@ fclean: clean
 	make -C LIBFT fclean
 
 re: fclean all
+
+norm: 
+	norminette $(SRCS)
