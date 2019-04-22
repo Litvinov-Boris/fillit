@@ -37,7 +37,7 @@ void		parts(const char *str, unsigned char *m)
 	}
 }
 
-void		init_tetr(t_tetrim *form, const char *str)
+void		init_tetr(t_tetrim *form, const char *str, unsigned char *m)
 {
 	int x;
 	int y;
@@ -46,7 +46,6 @@ void		init_tetr(t_tetrim *form, const char *str)
 	form->height = m[3] - m[2] + 1;
 	form->form = 0;
 	form->next = NULL;
-	form->id = id;
 	form->x = 0;
 	form->y = 0;
 	y = 0;
@@ -70,6 +69,10 @@ t_tetrim	*form(const char *str, char id)
 
 	parts(str, m);
 	if ((form = (t_tetrim*)malloc(sizeof(*form))) != NULL)
-		init_tetr(form, str);
+	{
+		init_tetr(form, str, m);
+		form->id = id;
+	}
 	return (form);
 }
+
