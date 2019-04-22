@@ -6,7 +6,7 @@
 /*   By: cpollich <cpollich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 15:38:38 by cpollich          #+#    #+#             */
-/*   Updated: 2019/04/17 19:47:55 by cpollich         ###   ########.fr       */
+/*   Updated: 2019/04/22 14:07:01 by cpollich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,13 @@ int		check_form(const char *str)
 	{
 		if (str[i] == '#')
 		{
-			if ((i + 1) <= 19 && str[i + 1] == #)
+			if ((i + 1) <= 19 && str[i + 1] == '#')
 				blocc++;
-			if ((i - 1) >= 0 && str[i - 1] == #)
+			if ((i - 1) >= 0 && str[i - 1] == '#')
 				blocc++;
-			if ((i + 5) <= 19 && str[i + 5] == #)
+			if ((i + 5) <= 19 && str[i + 5] == '#')
 				blocc++;
-			if ((i - 5) < 20 && str[i - 5] == #)
+			if ((i - 5) < 20 && str[i - 5] == '#')
 				blocc++;
 		}
 		i++;
@@ -91,7 +91,7 @@ int		check_elem(const char *str, int counts)
 		else if (str[i] != '\n')
 			return (0);
 	}
-	if (count == 21 && str[20] != '\n')
+	if (counts == 21 && str[20] != '\n')
 		return (0);
 	if (!check_form(str))
 		return (0);

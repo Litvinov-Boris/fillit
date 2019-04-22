@@ -6,7 +6,7 @@
 #    By: cpollich <cpollich@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/21 19:05:00 by cpollich          #+#    #+#              #
-#    Updated: 2019/04/17 19:49:00 by cpollich         ###   ########.fr        #
+#    Updated: 2019/04/22 14:04:18 by cpollich         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,9 @@ NAME = fillit
 
 F = -Wall -Wextra -Werror
 
-SRCS = valid_checker.c \
-	   main.c
+SRCS =	valid_checker.c \
+		form.c \
+		main.c
 
 SRCO = $(SRCS:.c=.o)
 
