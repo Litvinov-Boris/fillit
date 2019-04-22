@@ -6,7 +6,7 @@
 /*   By: cpollich <cpollich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/21 21:01:31 by svivienn          #+#    #+#             */
-/*   Updated: 2019/04/22 19:04:16 by cpollich         ###   ########.fr       */
+/*   Updated: 2019/04/22 19:15:19 by cpollich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,21 +79,26 @@ t_tetrim	*form(const char *str, char id)
 
 int			list_t(int fd, t_tetrim **list)
 {
-	int			counts;
-	char		*buf[21];
-	char		id;
+	int		counts;
+	char	*buf[21];
+	char	id;
+	int		counter;
 
 	id = 'A';
+	counter = 0;
 	while ((counts = read(fd, buf, 21)) >= 20)
 	{
 		if (!check_elem((const char *)buf, counts))
 			return (0);
 		else
-			put_in_list(list, form((const char *)buf, id));
+		{
+			put_in_list(list, form((const char *)buf, id++));
+			counter++;
+		}
 	}
 	if (counts != 0)
 		return (0);
-	return (1);
+	return (counter);
 }
 
 void		put_in_list(t_tetrim **list, t_tetrim *elem)
