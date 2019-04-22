@@ -16,6 +16,7 @@ int			main(int ac, char **av)
 {
 	int			fd;
 	t_tetrim	*list;
+	uint16_t	map[16];
 
 	if (ac != 2)
 		ft_putstr("usage: ./fillit [filename]\n");
@@ -29,6 +30,7 @@ int			main(int ac, char **av)
 			clear_list(&list);
 			return (0);
 		}
+		ft_bzero(map, sizeof(uint16_t) * 16);	
 	}
 	return (0);
 }
