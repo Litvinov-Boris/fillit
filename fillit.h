@@ -28,7 +28,6 @@ typedef struct		s_tetrim
 	unsigned char	height;
 	unsigned char	x;
 	unsigned char	y;
-	int				busy;
 }					t_tetrim;
 
 void				parts(const char *str, unsigned char *m);
@@ -44,5 +43,8 @@ void				busy_map(uint16_t *map, t_tetrim *list);
 int					check_point(uint16_t *map, t_tetrim *list);
 int					backtrack(uint16_t *map, t_tetrim *list, int size);
 int					bruteforce(int counts, uint16_t *map, t_tetrim *list);
+int					printerror(t_tetrim **list);
+int					printmap(t_tetrim *list, int size);
+char				*zeromap(int size);
 
 #	endif
