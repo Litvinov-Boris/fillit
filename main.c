@@ -19,7 +19,7 @@ char		*zeromap(int size)
 	int		x;
 	int		y;
 
-	if ((map = (char*)malloc(sizeof(char) * (size + 1) * (size))) != NULL)
+	if ((map = (char*)malloc(sizeof(char) * ((size + 1) * size) + 1)) != NULL)
 	{
 		y = 0;
 		while (y < size)
@@ -35,6 +35,7 @@ char		*zeromap(int size)
 			}
 			y++;
 		}
+		map[(size + 1 ) * size] = '\0';
 	}
 	return (map);
 }
@@ -70,7 +71,7 @@ int			printmap(t_tetrim *list, int size)
 
 int			printerror(t_tetrim **list)
 {
-	ft_putstr("error");
+	ft_putstr("error\n");
 	clear_list(list);
 	return (0);
 }
