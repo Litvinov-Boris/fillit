@@ -88,7 +88,7 @@ int			main(int ac, char **av)
 	{
 		list = NULL;
 		fd = open(av[1], O_RDONLY);
-		if (!(count = list_t(fd, &list)))
+		if (!(count = list_t(fd, &list, 0)))
 			return (printerror(&list));
 		ft_bzero(map, sizeof(uint16_t) * 16);
 		if (!(count = bruteforce(count, map, list)))

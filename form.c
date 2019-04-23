@@ -77,7 +77,7 @@ t_tetrim	*form(const char *str, char id)
 	return (form);
 }
 
-int			list_t(int fd, t_tetrim **list)
+int			list_t(int fd, t_tetrim **list, int count2)
 {
 	int			counts;
 	char		*buf[21];
@@ -99,8 +99,9 @@ int			list_t(int fd, t_tetrim **list)
 			put_in_list(list, forma);
 			counter++;
 		}
+		count2 = counts;
 	}
-	if (counts != 0)
+	if (counts != 0 || (counts == 0 && count2 == 21))
 		return (0);
 	return (counter);
 }
