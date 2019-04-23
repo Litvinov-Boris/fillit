@@ -6,11 +6,15 @@
 /*   By: cpollich <cpollich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/22 18:48:10 by svivienn          #+#    #+#             */
-/*   Updated: 2019/04/22 20:59:41 by cpollich         ###   ########.fr       */
+/*   Updated: 2019/04/23 20:30:22 by cpollich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+/*
+** Проверяет, можно ли на данный size поместить все наши фигуры
+*/
 
 int		bruteforce(int counts, uint16_t *map, t_tetrim *list)
 {
@@ -54,12 +58,20 @@ int		backtrack(uint16_t *map, t_tetrim *list, int size)
 	return (0);
 }
 
+/*
+** Смотрит, можно ли вообще вставить фигуру
+*/
+
 int		check_point(uint16_t *map, t_tetrim *list)
 {
 	if (*(uint64_t*)(map + list->y) & (list->form >> list->x))
 		return (0);
 	return (1);
 }
+
+/*
+** Вставляет фигуру в карту
+*/
 
 void	busy_map(uint16_t *map, t_tetrim *list)
 {
