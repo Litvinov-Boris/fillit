@@ -19,7 +19,7 @@ char		*zeromap(int size)
 	int		x;
 	int		y;
 
-	 ((map = (char*)malloc(sizeof(char) * (size + 1) * (size))) != NULL)
+	if ((map = (char*)malloc(sizeof(char) * (size + 1) * (size))) != NULL)
 	{
 		y = 0;
 		while (y < size)
