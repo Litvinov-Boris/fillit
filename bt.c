@@ -35,11 +35,15 @@ int		bruteforce(int counts, uint16_t *map, t_tetrim *list)
 
 int		backtrack(uint16_t *map, t_tetrim *list, int size)
 {
+	int pos;
+
 	if (!list)
 		return (1);
+	pos = (list->last != NULL) ? (list->last->x + (list->last->y * size)) : 0;
+	list->y = pos / size;
 	while (list->y <= (size - list->height))
 	{
-		list->x = 0;
+		list->x = (list->y == pos / size) ? pos % size : 0;
 		while (list->x <= (size - list->width))
 		{
 			if (check_point(map, list))

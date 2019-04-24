@@ -47,6 +47,7 @@ void		init_tetr(t_tetrim *form, const char *str, unsigned char *m)
 	form->height = m[3] - m[2] + 1;
 	form->form = 0;
 	form->next = NULL;
+	form->last = NULL;
 	form->x = 0;
 	form->y = 0;
 	y = 0;
@@ -119,4 +120,5 @@ void		put_in_list(t_tetrim **list, t_tetrim *elem)
 			tmp = tmp->next;
 		tmp->next = elem;
 	}
+	initlast(*list, elem);
 }
