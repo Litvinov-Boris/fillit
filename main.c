@@ -35,7 +35,7 @@ char		*zeromap(int size)
 			}
 			y++;
 		}
-		map[(size + 1 ) * size] = '\0';
+		map[(size + 1) * size] = '\0';
 	}
 	return (map);
 }
@@ -89,7 +89,7 @@ int			main(int ac, char **av)
 	{
 		list = NULL;
 		fd = open(av[1], O_RDONLY);
-		if (!(count = list_t(fd, &list, 0)))
+		if (!(count = list_t(fd, &list, 0)) || count > 26)
 			return (printerror(&list));
 		ft_bzero(map, sizeof(uint16_t) * 16);
 		if (!(count = bruteforce(count, map, list)))

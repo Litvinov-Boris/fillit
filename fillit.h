@@ -6,7 +6,7 @@
 /*   By: cpollich <cpollich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 18:42:28 by cpollich          #+#    #+#             */
-/*   Updated: 2019/04/22 18:39:57 by cpollich         ###   ########.fr       */
+/*   Updated: 2019/04/25 18:32:22 by cpollich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@
 #include "libft/libft.h"
 #include <stdint.h>
 
+/*
+**	id - Буква обозначения
+**	x, y - положение на карте левого верхнего квадрата
+**	last - Предыдущая тетраминка, которая имеет ту же форму
+*/
+
 typedef struct		s_tetrim
 {
 	uint64_t		form;
@@ -28,6 +34,7 @@ typedef struct		s_tetrim
 	unsigned char	height;
 	unsigned char	x;
 	unsigned char	y;
+	struct s_tetrim	*last;
 }					t_tetrim;
 
 void				parts(const char *str, unsigned char *m);
@@ -46,5 +53,6 @@ int					bruteforce(int counts, uint16_t *map, t_tetrim *list);
 int					printerror(t_tetrim **list);
 int					printmap(t_tetrim *list, int size);
 char				*zeromap(int size);
+void				initlast(t_tetrim *list, t_tetrim *elem);
 
 #	endif

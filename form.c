@@ -6,11 +6,19 @@
 /*   By: cpollich <cpollich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/21 21:01:31 by svivienn          #+#    #+#             */
-/*   Updated: 2019/04/22 21:39:17 by cpollich         ###   ########.fr       */
+/*   Updated: 2019/04/25 18:37:41 by cpollich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+/*
+** Функиця для определенения габарит фигуры
+** m[0] - LU
+** m[1] - RU
+** m[2] - LD
+** m[3] - RD
+*/
 
 void		parts(const char *str, unsigned char *m)
 {
@@ -47,6 +55,7 @@ void		init_tetr(t_tetrim *form, const char *str, unsigned char *m)
 	form->height = m[3] - m[2] + 1;
 	form->form = 0;
 	form->next = NULL;
+	form->last = NULL;
 	form->x = 0;
 	form->y = 0;
 	y = 0;
@@ -82,11 +91,11 @@ int			list_t(int fd, t_tetrim **list, int count2)
 	int			counts;
 	char		*buf[21];
 	char		id;
-	int			counter;
+	int			lst_size;
 	t_tetrim	*forma;
 
 	id = 'A';
-	counter = 0;
+	lst_size = 0;
 	while ((counts = read(fd, buf, 21)) >= 20)
 	{
 		if (!check_elem((const char *)buf, counts))
@@ -97,13 +106,13 @@ int			list_t(int fd, t_tetrim **list, int count2)
 			if (!forma)
 				return (0);
 			put_in_list(list, forma);
-			counter++;
+			lst_size++;
 		}
 		count2 = counts;
 	}
 	if (counts != 0 || (counts == 0 && count2 == 21))
 		return (0);
-	return (counter);
+	return (lst_size);
 }
 
 void		put_in_list(t_tetrim **list, t_tetrim *elem)
@@ -119,4 +128,5 @@ void		put_in_list(t_tetrim **list, t_tetrim *elem)
 			tmp = tmp->next;
 		tmp->next = elem;
 	}
+	initlast(*list, elem);
 }

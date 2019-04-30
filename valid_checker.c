@@ -73,3 +73,13 @@ void	clear_list(t_tetrim **list)
 	free(*list);
 	*list = NULL;
 }
+
+void	initlast(t_tetrim *list, t_tetrim *elem)
+{
+	while (list != elem)
+	{
+		if (list->form == elem->form)
+			elem->last = list;
+		list = list->next;
+	}
+}
